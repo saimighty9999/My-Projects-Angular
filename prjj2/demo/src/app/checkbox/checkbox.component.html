@@ -1,0 +1,98 @@
+<!-- <p>checkbox works!</p>
+<div class="container" id="btnContainer">
+    <div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Compose</button></div>
+<div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Sent</button></div> 
+<div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Received</button></div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup]="composeForm" (ngSubmit)="Submit()">
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Email:</label>
+                <input type="text"  name="email1" formControlName="email1" class="form-control" id="recipient-name">
+                <span style="color: red;" *ngIf="email1?.invalid && email1?.touched">Enter valid email</span>
+              </div>
+          <div class="form-group">
+            <label for="rec" class="col-form-label">Recipient:</label>
+            <input type="" class="form-control" id="recipient-name" name="rec" formControlName="rec">
+            <span style="color: red;" *ngIf="rec?.invalid && rec?.touched"></span>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" name="text" formControlName="text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--  
+<table border="2px">
+    <tr>
+    <th>UserName</th>
+    <th>Password</th>
+</tr>
+<tr>
+    <td>{{ruser}}</td>
+    <td>{{rpass}}</td>
+</tr> -->
+<div>
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"  (click)="submit()">Compose</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form  [formGroup]="sendForm" (ngSubmit)="onSend()">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">From:</label>
+              <input formControlName="from" name="from" type="text" class="form-control" id="recipient-name" [value]="msg">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Recipient:</label>
+              <input formControlName="re" name="re" type="text" class="form-control" id="recipient-name" #login>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea formControlName="text" name="text" class="form-control" id="message-text" #message></textarea>
+            </div>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="sent()">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br><br>
+  <div>
+  <button type="button" class="btn btn-success" (click)="recived()" >Inbox</button>
+  <h3 id="sai"></h3>
+  </div>
+  
+  <button class="btn btn-primary">outbox</button>
+  
